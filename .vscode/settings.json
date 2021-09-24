@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "*.config": "xml",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iostream": "cpp"
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [

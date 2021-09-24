@@ -1,14 +1,13 @@
 #include <map>
 #include "arbol.h"
 #include "nodo.h"
-using namespace std;
 
-Arbol::Arbol(Empleado empleado) {
+Arbol::Arbol(int ID, string nombre, string apellido, int tipoEmpleado) {
 
-    Nodo *nodoRaiz = new Nodo(empleado);
+    Nodo *nodoRaiz = new Nodo(ID, nombre, apellido, tipoEmpleado, ID);
     this->raiz = nodoRaiz;
 
-    this->elementos.insert(pair<int,Nodo *>(empleado.getID(), nodoRaiz));
+    this->elementos.insert(pair<int,Nodo *>(ID, nodoRaiz));
 }
 
 Arbol::~Arbol() {
@@ -18,22 +17,22 @@ Arbol::~Arbol() {
 }
 
 
-void Arbol::AgregarNodo(Empleado empleado)
+void Arbol::AgregarNodo(int ID, string nombre, string apellido, int tipoEmpleado, int IDsupervisor)
 {
-    Nodo *nodo = new Nodo(empleado);
+    Nodo *nodo = new Nodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
 
     // Buscar ese nodo padre
-    Nodo *nodoPadre = this->elementos.at(empleado.getIDsupervisor());
+    Nodo *nodoPadre = this->elementos.at(IDsupervisor);
     nodoPadre->AgregarHijo(nodo);
 
     // Agregar nodo al índice
-    this->elementos.insert(pair<int,Nodo *>(empleado.getID(), nodo));
+    this->elementos.insert(pair<int,Nodo *>(ID, nodo));
 }
 
-/*std::ostream& operator << (std::ostream &o, const Arbol &arbol)
-{
+
+std::ostream& operator << (std::ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz;
     o << *(raiz);
 
     return o;
-}*/
+}

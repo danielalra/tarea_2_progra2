@@ -6,13 +6,16 @@ using namespace std;
 
 class Arbol{
 
-    Nodo *raiz;
+    //Nodo *raiz;
     map <int, Nodo *> elementos;
+    
 
     public:
-    Arbol(Empleado jefe);
+    Nodo *raiz;
+    Arbol(int, string, string, int);
     ~Arbol();
-    void AgregarNodo(Empleado empleado);
+    void AgregarNodo(int, string, string, int, int);
+    friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
 
 };
 #endif

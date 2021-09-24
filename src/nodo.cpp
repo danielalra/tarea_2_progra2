@@ -1,8 +1,14 @@
 #include "nodo.h"
-#include "empleado.h"
+#include <string>
+#include <iostream>
+using namespace std;
 
-Nodo::Nodo(Empleado empleado) : empleado(empleado){
-    this->ID = this->empleado.getID();
+Nodo::Nodo(int ID, string nombre, string apellido, int tipoEmpleado, int IDsupervisor){
+    this->ID=ID;
+    this->nombre=nombre;
+    this->apellido=apellido;
+    this->tipoEmpleado=tipoEmpleado;
+    this->IDsupervisor=IDsupervisor;
 }
 
 Nodo::~Nodo(){
@@ -14,3 +20,23 @@ Nodo::~Nodo(){
 void Nodo::AgregarHijo(Nodo *hijo) {
     this->hijos.push_back(hijo);
 }
+std::ostream& operator << (std::ostream &o, const Nodo &nodo)
+{
+    // Imprimir información del nodo
+
+    o << nodo.ID;
+    o << ",";
+    o << nodo.nombre << nodo.apellido;
+    o << ",";
+    o << nodo.IDsupervisor;
+    o << std::endl;
+
+    // Imprimir información de cada hijo
+    for (Nodo *nodoHijo : nodo.hijos)
+    {
+        o << *nodoHijo;
+    }
+
+    return o;
+}
+
