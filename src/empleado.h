@@ -17,5 +17,6 @@ class Empleado{
     int getID();
     string getNombre();
     string getApellido();
+    int getIDsupervisor();
 };
 #endif

@@ -20,3 +20,6 @@ string Empleado::getNombre (){
 string Empleado::getApellido (){
     return this->apellido;
 }
+int Empleado:: getIDsupervisor(){
+    return ID_supervisor;
+}
