@@ -28,6 +28,12 @@ void Arbol::AgregarNodo(int ID, string nombre, string apellido, int tipoEmpleado
     // Agregar nodo al índice
     this->elementos.insert(pair<int,Nodo *>(ID, nodo));
 }
+void Arbol::AgregarRaiz(int ID, string nombre, string apellido, int tipoEmpleado){
+    Nodo *nodoRaiz = new Nodo(ID, nombre, apellido, tipoEmpleado, ID);
+    this->raiz = nodoRaiz;
+
+    this->elementos.insert(pair<int,Nodo *>(ID, nodoRaiz));
+}
 
 
 std::ostream& operator << (std::ostream &o, const Arbol &arbol){

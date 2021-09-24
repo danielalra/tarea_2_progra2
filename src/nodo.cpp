@@ -9,6 +9,7 @@ Nodo::Nodo(int ID, string nombre, string apellido, int tipoEmpleado, int IDsuper
     this->apellido=apellido;
     this->tipoEmpleado=tipoEmpleado;
     this->IDsupervisor=IDsupervisor;
+
 }
 
 Nodo::~Nodo(){
