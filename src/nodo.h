@@ -11,7 +11,7 @@ class Nodo{
     int tipoEmpleado;
     int IDsupervisor;
     string nombreSupervisor;
-    int pago;
+    float pago;
     vector <Nodo *> hijos;
 
     public:
@@ -21,7 +21,7 @@ class Nodo{
     void AgregarHijo(Nodo *hijo);
     string GetNombreCompleto();
     void SetNombreSupervisor(string nombreSupervisor);
-    void SetPago(int pago);
+    void SetPago(float pago);
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo);
 };
 

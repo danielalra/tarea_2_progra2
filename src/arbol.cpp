@@ -34,7 +34,7 @@ void Arbol::AgregarNodo(int ID, string nombre, string apellido, int tipoEmpleado
     }
 
 }
-void Arbol::SetPago(int ID, int pago){
+void Arbol::SetPago(int ID, float pago){
     Nodo *nodo = this->elementos.at(ID);
     nodo->SetPago(pago);
 }
