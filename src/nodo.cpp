@@ -9,6 +9,7 @@ Nodo::Nodo(int ID, string nombre, string apellido, int tipoEmpleado, int IDsuper
     this->apellido=apellido;
     this->tipoEmpleado=tipoEmpleado;
     this->IDsupervisor=IDsupervisor;
+    
 
 }
 
@@ -23,7 +24,7 @@ void Nodo::AgregarHijo(Nodo *hijo) {
 }
 std::ostream& operator << (std::ostream &o, const Nodo &nodo)
 {
-    // Imprimir información del nodo
+
     o << nodo.ID;
     o << ",";
     o << nodo.nombre << " " <<nodo.apellido;

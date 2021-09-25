@@ -6,12 +6,11 @@ using namespace std;
 
 class Arbol{
 
-    //Nodo *raiz;
+    Nodo *raiz;
     map <int, Nodo *> elementos;
     
 
     public:
-    Nodo *raiz;
     Arbol();
     ~Arbol();
     void AgregarNodo(int, string, string, int, int);
