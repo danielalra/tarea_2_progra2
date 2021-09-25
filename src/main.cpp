@@ -22,32 +22,31 @@ int main(){
     int IDsupervisor {47};
     int contador {1};
 
-    //Arbol *arbol {};
+    getline(lector, linea);
+    std::istringstream stream(linea);
+    stream >> ID >> nombre >> apellido >> correo >> tipoEmpleado;
+
+    Arbol *arbol = new Arbol(ID, nombre, apellido, tipoEmpleado);
 
     while (getline(lector, linea)){
         std::istringstream stream(linea);
-        
-        /*nombre="";
+
+        nombre="";
         apellido="";
         correo="";
         tipoEmpleado=0;
-        IDsupervisor=0;*/
-
+        IDsupervisor=0;
+        
         stream >> ID >> nombre >> apellido >> correo >> tipoEmpleado >> IDsupervisor;
-        cout <<"Linea "<<contador<<" ID " <<ID<< " nombre: " << nombre  << " apellido " <<apellido<< " supervisor "<<IDsupervisor<< endl;
 
-        /*if(contador==0){
-          arbol->AgregarRaiz(ID, nombre, apellido, tipoEmpleado);  
-        }
-        else{
-            arbol->AgregarNodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
-        }*/
+        arbol->AgregarNodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
         contador++;
+        
     }
 
-    //cout << *(arbol);
+    cout << *(arbol);
 
-    //delete arbol;
+    delete arbol;
 
     lector.close();
     
