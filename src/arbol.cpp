@@ -24,13 +24,19 @@ void Arbol::AgregarNodo(int ID, string nombre, string apellido, int tipoEmpleado
     else{
         Nodo *nodo = new Nodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
         // Buscar ese nodo padre
-        Nodo *nodoPadre = this->elementos.at(IDsupervisor);
-        nodoPadre->AgregarHijo(nodo);
+        Nodo *nodoSupervisor = this->elementos.at(IDsupervisor);
+        nodo->SetNombreSupervisor(nodoSupervisor->GetNombreCompleto()); 
+        nodoSupervisor->AgregarHijo(nodo);
+
 
         // Agregar nodo al índice
         this->elementos.insert(pair<int,Nodo *>(ID, nodo));
     }
 
+}
+void Arbol::SetPago(int ID, int pago){
+    Nodo *nodo = this->elementos.at(ID);
+    nodo->SetPago(pago);
 }
 std::ostream& operator << (std::ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz;

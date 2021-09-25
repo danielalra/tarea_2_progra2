@@ -10,6 +10,8 @@ class Nodo{
     string apellido;
     int tipoEmpleado;
     int IDsupervisor;
+    string nombreSupervisor;
+    int pago;
     vector <Nodo *> hijos;
 
     public:
@@ -17,6 +19,9 @@ class Nodo{
     ~Nodo();
 
     void AgregarHijo(Nodo *hijo);
+    string GetNombreCompleto();
+    void SetNombreSupervisor(string nombreSupervisor);
+    void SetPago(int pago);
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo);
 };
 
