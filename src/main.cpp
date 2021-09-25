@@ -22,11 +22,7 @@ int main(){
     int IDsupervisor {47};
     int contador {1};
 
-    getline(lector, linea);
-    std::istringstream stream(linea);
-    stream >> ID >> nombre >> apellido >> correo >> tipoEmpleado;
-
-    Arbol *arbol = new Arbol(ID, nombre, apellido, tipoEmpleado);
+    Arbol *arbol = new Arbol();
 
     while (getline(lector, linea)){
         std::istringstream stream(linea);

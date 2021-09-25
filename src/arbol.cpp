@@ -2,31 +2,35 @@
 #include "arbol.h"
 #include "nodo.h"
 
-Arbol::Arbol(int ID, string nombre, string apellido, int tipoEmpleado) {
-
-    Nodo *nodoRaiz = new Nodo(ID, nombre, apellido, tipoEmpleado, ID);
-    this->raiz = nodoRaiz;
-
-    this->elementos.insert(pair<int,Nodo *>(ID, nodoRaiz));
+Arbol::Arbol() {
+    this->raiz=nullptr;
 }
 
 Arbol::~Arbol() {
-
-    delete this->raiz;
-
+    if(raiz!=nullptr){
+        delete this->raiz;
+    }
 }
 
 
 void Arbol::AgregarNodo(int ID, string nombre, string apellido, int tipoEmpleado, int IDsupervisor)
 {
-    Nodo *nodo = new Nodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
+    if(IDsupervisor == 0){
 
-    // Buscar ese nodo padre
-    Nodo *nodoPadre = this->elementos.at(IDsupervisor);
-    nodoPadre->AgregarHijo(nodo);
+        Nodo *nodoRaiz = new Nodo(ID, nombre, apellido, tipoEmpleado, ID);
+        this->raiz = nodoRaiz;
+        this->elementos.insert(pair<int,Nodo *>(ID, nodoRaiz)); 
+    }
+    else{
+        Nodo *nodo = new Nodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
+        // Buscar ese nodo padre
+        Nodo *nodoPadre = this->elementos.at(IDsupervisor);
+        nodoPadre->AgregarHijo(nodo);
 
-    // Agregar nodo al índice
-    this->elementos.insert(pair<int,Nodo *>(ID, nodo));
+        // Agregar nodo al índice
+        this->elementos.insert(pair<int,Nodo *>(ID, nodo));
+    }
+
 }
 std::ostream& operator << (std::ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz;

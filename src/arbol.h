@@ -12,7 +12,7 @@ class Arbol{
 
     public:
     Nodo *raiz;
-    Arbol(int, string, string, int);
+    Arbol();
     ~Arbol();
     void AgregarNodo(int, string, string, int, int);
     friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
