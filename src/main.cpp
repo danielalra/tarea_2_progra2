@@ -104,6 +104,7 @@ int main(){
     escritor << totalNeto <<"; "<<retencion<<"; "<< totalBruto << endl;
 
     escritor.close();
+    //hols
 
     delete arbol;
 
