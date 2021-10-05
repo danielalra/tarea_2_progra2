@@ -19,7 +19,6 @@ Nodo::Nodo(int id, string nombre, string apellido, int tipoEmpleado, int idSuper
 
 Nodo::~Nodo(){
     for (Nodo* hijo : this->hijos){
-        delete this->empleado;
         delete hijo;
     }
 }

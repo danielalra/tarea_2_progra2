@@ -51,14 +51,14 @@ int main(){
     lectorHorasTrabajadas.close();
 
     //escribir el archivo de salida
-    /*std::ofstream escritor("Cuentas.csv", std::ofstream::out); 
+    std::ofstream escritor("Cuentas.csv", std::ofstream::out); 
 
     escritor << *(arbol);
-    escritor << totalNeto <<"; "<<retencion<<"; "<< totalBruto << endl;
+    //escritor << totalNeto <<"; "<<retencion<<"; "<< totalBruto << endl;
 
     escritor.close();
     //hols*/
-    cout << *arbol;
+    //cout << *arbol;
 
     delete arbol;
 
