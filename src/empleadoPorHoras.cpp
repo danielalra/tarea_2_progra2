@@ -8,6 +8,7 @@ EmpleadoPorHoras::EmpleadoPorHoras(int id, string nombre, string apellido, int i
     this->apellido=apellido;
     this->idSupervisor=idSupervisor;
     this->tipoEmpleado=2;
+    this->salario=0;
 }
 
 void EmpleadoPorHoras::SetSalario(int salario, int horas){

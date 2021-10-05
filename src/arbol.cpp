@@ -18,7 +18,7 @@ Arbol::~Arbol() {
 
 void Arbol::AgregarNodo(int id, string nombre, string apellido, int tipoEmpleado, int idSupervisor)
 {
-    if(idSupervisor == 0){
+    if(id == 1){
 
         Nodo *nodoRaiz = new Nodo(id, nombre, apellido, tipoEmpleado, idSupervisor);
         this->raiz = nodoRaiz;
@@ -74,50 +74,4 @@ istream& operator >> (istream &lector, Arbol &arbol)
     }
 
     return lector;
-}
-
-istream& operator > (istream &lector2, Arbol &arbol)
-{
-    string linea {""};
-
-    int id {0};
-    int salario {0};
-
-    while (getline(lector2, linea)){
-        istringstream stream(linea);
-
-        id=0;
-        salario=0;
-        
-        stream >> id >>salario; 
-
-        salario=salario*0.93; //retencion del 7%
-
-        arbol.SetSalario(id,salario,1);
-    }
-
-    return lector2;
-}
-
-istream& operator < (istream &lector3, Arbol &arbol)
-{
-    string linea {""};
-
-    int id {0};
-    int salario {0};
-    int horas {0};
-
-    while (getline(lector3, linea)){
-        istringstream stream(linea);
-
-        id=0;
-        salario=0;
-        horas=0;
-        
-        stream >> id >>salario >> horas;
-
-        arbol.SetSalario(id,salario,horas);
-    }
-
-    return lector3;
 }

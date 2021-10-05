@@ -6,7 +6,8 @@ EmpleadoDeNomina::EmpleadoDeNomina(int id, string nombre, string apellido, int i
     this->nombre=nombre;
     this->apellido=apellido;
     this->idSupervisor=idSupervisor;
-    this->tipoEmpleado=1; 
+    this->tipoEmpleado=1;
+    this->salario=0; 
 }
 
 void EmpleadoDeNomina::SetSalario(int salario, int horas){

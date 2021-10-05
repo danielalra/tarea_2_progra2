@@ -1,3 +1,5 @@
+#ifndef UNIT_TEST
+
 #include "arbol.h"
 #include <iostream>
 #include <string>
@@ -21,7 +23,7 @@ int main(){
 
 
     //leer Persnas.txt 
-    std::ifstream lectorPersonas("Personas.txt", std::ifstream::in);
+    std::ifstream lectorPersonas("C:/progra2/tarea_2_progra2/src//Personas.txt", std::ifstream::in);
     if (!lectorPersonas.is_open())
     {
         std::cerr << "Error leyendo archivo Personas.txt" << std::endl;
@@ -34,7 +36,7 @@ int main(){
 
 
     //  leer Nomina.txt y asignar salarios
-    std::ifstream lectorNomina("Nomina.txt", std::ifstream::in);
+    std::ifstream lectorNomina("C:/progra2/tarea_2_progra2/src//Nomina.txt", std::ifstream::in);
     if (!lectorNomina.is_open())
     {
         std::cerr << "Error leyendo archivo Nomina.txt" << std::endl;
@@ -67,7 +69,7 @@ int main(){
     
 
     //leer HorasTrabajadas.txt y asignar pagos
-    std::ifstream lectorHorasTrabajadas("HorasTrabajadas.txt", std::ifstream::in);
+    std::ifstream lectorHorasTrabajadas("C:/progra2/tarea_2_progra2/src//HorasTrabajadas.txt", std::ifstream::in);
     if (!lectorHorasTrabajadas.is_open())
     {
         std::cerr << "Error leyendo archivo HorasTrabajadas.txt" << std::endl;
@@ -91,7 +93,7 @@ int main(){
     }
 
     lectorHorasTrabajadas.close();
-    /*
+    
     //escribir el archivo de salida
     std::ofstream escritor("Cuentas.csv", std::ofstream::out); 
 
@@ -100,10 +102,12 @@ int main(){
     //cout << bruto-(neto + retencion) << endl;
 
     escritor.close();
-    */
-    cout << *arbol;
+    
+    //cout << *arbol;
 
     delete arbol;
 
  return 0;
 }
+
+#endif

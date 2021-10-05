@@ -18,12 +18,8 @@ class Arbol{
     //leer un archivo con formato de Personas.txt
     friend std::istream& operator >> (std::istream &i, Arbol &arbol);
 
-    //leer un archivo con formato de HorasTrabjadas.txt
-    friend std::istream& operator < (std::istream &i, Arbol &arbol);
-
     //escribir el archivo deseado
     friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
-
 
 };
 #endif
