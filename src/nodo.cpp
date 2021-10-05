@@ -1,19 +1,25 @@
 #include "nodo.h"
-#include <string>
+#include "empleadoDeNomina.h"
+#include "empleadoPorHoras.h"
+
 #include <iostream>
 using namespace std;
 
-Nodo::Nodo(int ID, string nombre, string apellido, int tipoEmpleado, int IDsupervisor){
-    this->ID=ID;
-    this->nombre=nombre;
-    this->apellido=apellido;
-    this->tipoEmpleado=tipoEmpleado;
-    this->IDsupervisor=IDsupervisor;
-    this->pago=0;
+Nodo::Nodo(int id, string nombre, string apellido, int tipoEmpleado, int idSupervisor){
+
+    if (tipoEmpleado == 1){
+         EmpleadoDeNomina *empleado1 = new EmpleadoDeNomina(id, nombre, apellido, idSupervisor);
+        this->empleado = empleado1;
+    }
+    else { 
+        EmpleadoPorHoras *empleado2 = new EmpleadoPorHoras(id, nombre, apellido, idSupervisor);
+        this->empleado = empleado2;
+    }
 }
 
 Nodo::~Nodo(){
     for (Nodo* hijo : this->hijos){
+        delete this->empleado;
         delete hijo;
     }
 }
@@ -21,29 +27,27 @@ Nodo::~Nodo(){
 void Nodo::AgregarHijo(Nodo *hijo) {
     this->hijos.push_back(hijo);
 }
-string Nodo::GetNombreCompleto(){
-    return this->nombre+ " " +this->apellido;
+void Nodo::SetNombreSupervisorNodo(string nombreSupervisor){
+
+    this->empleado->SetNombreSupervisor(nombreSupervisor);
+}
+string Nodo::GetNombreNodo(){
+    return this->empleado->GetNombreCompleto();
+}
+void Nodo::SetSalarioNodo(int salario, int horas){
+    this->empleado->SetSalario(salario, horas);
 }
 
-void Nodo::SetNombreSupervisor(string nombreSupervisor){
-    this->nombreSupervisor=nombreSupervisor;
-}
-void Nodo::SetPago(float pago){
-    this->pago=pago;
-}
 std::ostream& operator << (std::ostream &o, const Nodo &nodo)
 {
-    /*string pagoSalida = to_string(nodo.pago);
-    string salida = nodo.ID +", "+ nodo.nombre + " " + nodo.apellido + ", " + nodo.nombreSupervisor + ", " + pagoSalida;
-    o << salida;*/
 
-    o <<nodo.ID;
-    o << "; ";
-    o << nodo.nombre << " " <<nodo.apellido;
-    o << "; ";
-    o << nodo.nombreSupervisor;
-    o << "; ";
-    o << nodo.pago;
+    o <<nodo.empleado->Getid();
+    o << ", ";
+    o << nodo.empleado->GetNombreCompleto();
+    o << ", ";
+    o << nodo.empleado->GetNombreSupervisor();
+    o << ", ";
+    o << nodo.empleado->GetSalario();
     o << endl;
 
     // Imprimir información de cada hijo

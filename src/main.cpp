@@ -4,16 +4,18 @@
 #include <fstream>
 #include <sstream>
 
+
 int main(){
+    
     //variables a utilizar
     string linea {""};
-    int ID {0};
+    int id {0};
     string nombre{""};
     string apellido{""};
     string correo{""};
     int tipoEmpleado {0};
-    int IDsupervisor {0};
-    float pago {0};
+    int idSupervisor {0};
+    float salario {0};
     int horas {0};
     double totalNeto {0};
     double totalBruto {0};
@@ -37,16 +39,16 @@ int main(){
         apellido="";
         correo="";
         tipoEmpleado=0;
-        IDsupervisor=0;
+        idSupervisor=0;
         
-        stream >> ID >> nombre >> apellido >> correo >> tipoEmpleado >> IDsupervisor;
+        stream >> id >> nombre >> apellido >> correo >> tipoEmpleado >> idSupervisor;
 
-        arbol->AgregarNodo(ID, nombre, apellido, tipoEmpleado, IDsupervisor);
+        arbol->AgregarNodo(id, nombre, apellido, tipoEmpleado, idSupervisor);
     }
     lectorPersonas.close();
     //  leer Nomina.txt y asignar pagos
 
-    std::ifstream lectorNomina("Nomina.txt", std::ifstream::in);
+    /*std::ifstream lectorNomina("Nomina.txt", std::ifstream::in);
     if (!lectorNomina.is_open())
     {
         std::cerr << "Error leyendo archivo Nomina.txt" << std::endl;
@@ -66,7 +68,7 @@ int main(){
         pago = pago-reteniendo;
         totalNeto+=pago;
 
-        arbol->SetPago(ID, pago);
+        arbol->SetSalario(ID, pago);
 
     }
     lectorNomina.close();
@@ -92,7 +94,7 @@ int main(){
         totalBruto+=pago;
         totalNeto+=pago;
 
-        arbol->SetPago(ID, pago);
+        arbol->SetSalario(ID, pago);
 
     }
     lectorHorasTrabajadas.close();
@@ -104,7 +106,8 @@ int main(){
     escritor << totalNeto <<"; "<<retencion<<"; "<< totalBruto << endl;
 
     escritor.close();
-    //hols
+    //hols*/
+    cout << *(arbol);
 
     delete arbol;
 

@@ -14,8 +14,9 @@ class Arbol{
     Arbol();
     ~Arbol();
     void AgregarNodo(int, string, string, int, int);
-    void SetPago(int, float);
+    void SetSalario(int, float, int);
     friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
+    friend std::istream& operator >> (std::istream &i, Arbol &arbol);
 
 };
 #endif

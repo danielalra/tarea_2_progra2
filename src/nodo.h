@@ -1,17 +1,15 @@
 #ifndef NODO_H
 #define NODO_H
+
 #include <vector>
 #include <string>
 using namespace std;
 
+#include "empleado.h"
+
 class Nodo{
-    int ID;
-    string nombre;
-    string apellido;
-    int tipoEmpleado;
-    int IDsupervisor;
-    string nombreSupervisor;
-    float pago;
+   
+    Empleado *empleado;
     vector <Nodo *> hijos;
 
     public:
@@ -19,9 +17,9 @@ class Nodo{
     ~Nodo();
 
     void AgregarHijo(Nodo *hijo);
-    string GetNombreCompleto();
-    void SetNombreSupervisor(string nombreSupervisor);
-    void SetPago(float pago);
+    void SetNombreSupervisorNodo(string nombreSupervisor);
+    string GetNombreNodo();
+    void SetSalarioNodo(int, int);
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo);
 };
 
