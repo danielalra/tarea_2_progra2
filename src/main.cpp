@@ -70,12 +70,14 @@ int main(){
         salario=0;
         horas=0;
 
-        string string1 {""};
+        /*string string1 {""};
         string string2 {""};
-        string string3 {""};
+        string string3 {""};*/
         
-        stream >> string1 >> string2 >> string3;
-        cout << string1 << " " << string2 << " " << string3 <<endl;
+        stream >> id >> salario >> horas;
+
+        //stream >> string1 >> string2 >> string3;
+       // cout << string1 << " " << string2 << " " << string3 <<endl;
 
 
         arbol->SetSalario(id,salario,horas);
