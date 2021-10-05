@@ -7,6 +7,16 @@
 
 int main(){
 
+    //variables a utilizar
+    string linea {""};
+
+    int id {0};
+    int salario {0};
+    int horas {0};
+    float bruto {0};
+    float neto {0};
+    float retencion {0};
+
      Arbol *arbol = new Arbol();
 
 
@@ -31,9 +41,28 @@ int main(){
         std::cerr << "Error leyendo archivo Nomina.txt" << std::endl;
         return -1;
     }
+    while (getline(lectorNomina, linea)){
+        istringstream stream(linea);
 
-        lectorNomina > *arbol;
-    
+        id=0;
+        salario=0;
+        
+        stream >> id >>salario;
+
+         //actualiza el bruto
+        bruto+=salario;
+
+        //obtiene el dinero retenido
+        int retenido = salario*0.07;
+
+        //actualiza neto y retencion 
+        salario=salario-retenido;
+        neto+=salario;
+        retencion+=retenido;
+
+        arbol->SetSalario(id,salario,1);
+    }
+
     lectorNomina.close();
 
 
@@ -46,7 +75,21 @@ int main(){
         return -1;
     }
 
-        lectorHorasTrabajadas < *arbol;
+    while (getline(lectorHorasTrabajadas, linea)){
+        istringstream stream(linea);
+
+        id=0;
+        salario=0;
+        horas=0;
+        
+        stream >> id >>salario >> horas;
+
+        //actualiza neto y bruto
+
+        arbol->SetSalario(id,salario,horas);
+        bruto+=salario*horas;
+        neto+=salario*horas;
+    }
 
     lectorHorasTrabajadas.close();
 
@@ -54,11 +97,12 @@ int main(){
     std::ofstream escritor("Cuentas.csv", std::ofstream::out); 
 
     escritor << *(arbol);
-    //escritor << totalNeto <<"; "<<retencion<<"; "<< totalBruto << endl;
+    escritor << neto <<", "<<retencion<<", "<< bruto << endl;
+    escritor << bruto-(neto + retencion) << endl;
 
     escritor.close();
-    //hols*/
-    //cout << *arbol;
+    
+    cout << *arbol;
 
     delete arbol;
 

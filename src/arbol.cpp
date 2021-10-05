@@ -6,9 +6,7 @@
 
 Arbol::Arbol() {
     this->raiz=nullptr;
-    this->totalBruto=0;
-    this->totalNeto=0;
-    this->retencion=0;
+
 }
 
 Arbol::~Arbol() {
