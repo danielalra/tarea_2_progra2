@@ -146,12 +146,12 @@ namespace {
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
         arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
 
-        arbol->SetSalario(1, 2000, 0);
+        arbol->SetSalario(1, 20000, 0);
         arbol->SetSalario(2, 200, 4); 
 
         float actual = arbol->GetNeto();
 
-        float esperado = (800+2000*0.93);
+        float esperado = (800+20000*0.93);
 
         delete arbol;
 
@@ -162,12 +162,12 @@ namespace {
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
         arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
 
-        arbol->SetSalario(1, 2000, 0);
+        arbol->SetSalario(1, 20000, 0);
         arbol->SetSalario(2, 200, 4); 
 
         float actual = arbol->GetBruto();
 
-        float esperado = (800+2000);
+        float esperado = (800+20000);
 
         delete arbol;
 
@@ -178,15 +178,16 @@ namespace {
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
         arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
 
-        arbol->SetSalario(1, 2000, 0);
+        arbol->SetSalario(1, 20000, 0);
         arbol->SetSalario(2, 200, 4); 
 
         float actual = arbol->GetRetencion();
 
-        float esperado = 140;
+        float esperado = 1400;
 
         delete arbol;
 
         EXPECT_FLOAT_EQ(esperado, actual);
+        //sds
     }
 }
