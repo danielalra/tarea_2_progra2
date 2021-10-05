@@ -2,9 +2,13 @@
 #include "arbol.h"
 #include "nodo.h"
 #include <sstream>
+#include <iostream>
 
 Arbol::Arbol() {
     this->raiz=nullptr;
+    this->totalBruto=0;
+    this->totalNeto=0;
+    this->retencion=0;
 }
 
 Arbol::~Arbol() {
@@ -39,13 +43,13 @@ void Arbol::SetSalario(int id, float salario, int horas){
     Nodo *nodo = this->elementos.at(id);
     nodo->SetSalarioNodo(salario, horas);
 }
-std::ostream& operator << (std::ostream &o, const Arbol &arbol){
+ostream& operator << (ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz;
     o << *(raiz);
 
     return o;
 }
-std::istream& operator >> (std::istream &lector, Arbol &arbol)
+istream& operator >> (istream &lector, Arbol &arbol)
 {
     string linea {""};
 
@@ -59,6 +63,7 @@ std::istream& operator >> (std::istream &lector, Arbol &arbol)
     while (getline(lector, linea)){
         istringstream stream(linea);
 
+        id=0;
         nombre="";
         apellido="";
         correo="";
@@ -71,4 +76,50 @@ std::istream& operator >> (std::istream &lector, Arbol &arbol)
     }
 
     return lector;
+}
+
+istream& operator > (istream &lector2, Arbol &arbol)
+{
+    string linea {""};
+
+    int id {0};
+    int salario {0};
+
+    while (getline(lector2, linea)){
+        istringstream stream(linea);
+
+        id=0;
+        salario=0;
+        
+        stream >> id >>salario; 
+
+        salario=salario*0.93; //retencion del 7%
+
+        arbol.SetSalario(id,salario,1);
+    }
+
+    return lector2;
+}
+
+istream& operator < (istream &lector3, Arbol &arbol)
+{
+    string linea {""};
+
+    int id {0};
+    int salario {0};
+    int horas {0};
+
+    while (getline(lector3, linea)){
+        istringstream stream(linea);
+
+        id=0;
+        salario=0;
+        horas=0;
+        
+        stream >> id >>salario >> horas;
+
+        arbol.SetSalario(id,salario,horas);
+    }
+
+    return lector3;
 }
