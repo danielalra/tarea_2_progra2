@@ -19,7 +19,7 @@ class Nodo{
     void AgregarHijo(Nodo *hijo);
     void SetNombreSupervisorNodo(string nombreSupervisor);
     string GetNombreNodo();
-    void SetSalarioNodo(int, int);
+    void SetSalarioNodo(float, int);
     float GetBrutoNodo();
     float GetNetoNodo();
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo);

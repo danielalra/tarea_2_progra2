@@ -33,7 +33,7 @@ void Nodo::SetNombreSupervisorNodo(string nombreSupervisor){
 string Nodo::GetNombreNodo(){
     return this->empleado->GetNombreCompleto();
 }
-void Nodo::SetSalarioNodo(int salario, int horas){
+void Nodo::SetSalarioNodo(float salario, int horas){
     this->empleado->SetSalario(salario, horas);
 }
 float Nodo::GetBrutoNodo(){

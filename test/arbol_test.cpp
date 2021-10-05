@@ -140,4 +140,53 @@ namespace {
 
         EXPECT_EQ(esperada, actual);
     }
+    
+    TEST(ArbolTest, Test_GetNeto){
+       Arbol *arbol = new Arbol();
+        arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
+        arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
+
+        arbol->SetSalario(1, 2000, 0);
+        arbol->SetSalario(2, 200, 4); 
+
+        float actual = arbol->GetNeto();
+
+        float esperado = (800+2000*0.93);
+
+        delete arbol;
+
+        EXPECT_FLOAT_EQ(esperado, actual);
+    }
+    TEST(ArbolTest, Test_GetBruto){
+       Arbol *arbol = new Arbol();
+        arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
+        arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
+
+        arbol->SetSalario(1, 2000, 0);
+        arbol->SetSalario(2, 200, 4); 
+
+        float actual = arbol->GetBruto();
+
+        float esperado = (800+2000);
+
+        delete arbol;
+
+        EXPECT_FLOAT_EQ(esperado, actual);
+    }
+    TEST(ArbolTest, Test_GetRetencion){
+       Arbol *arbol = new Arbol();
+        arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
+        arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
+
+        arbol->SetSalario(1, 2000, 0);
+        arbol->SetSalario(2, 200, 4); 
+
+        float actual = arbol->GetRetencion();
+
+        float esperado = 140;
+
+        delete arbol;
+
+        EXPECT_FLOAT_EQ(esperado, actual);
+    }
 }

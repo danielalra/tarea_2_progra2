@@ -14,8 +14,9 @@ int main(){
 
     int id {0};
     int salario {0};
-    int horas;
+    int horas {0};
 
+    //el arbol
      Arbol *arbol = new Arbol();
 
 
@@ -32,7 +33,7 @@ int main(){
     lectorPersonas.close();
 
 
-    //  leer Nomina.txt, retener y asignar salarios
+    //  leer Nomina.txt
     std::ifstream lectorNomina("C:/progra2/tarea_2_progra2/src//Nomina.txt", std::ifstream::in);
     if (!lectorNomina.is_open())
     {
@@ -68,24 +69,27 @@ int main(){
         id=0;
         salario=0;
         horas=0;
-        
-        stream >> id >>salario >> horas;
 
-        //actualiza neto y bruto
+        string string1 {""};
+        string string2 {""};
+        string string3 {""};
+        
+        stream >> string1 >> string2 >> string3;
+        cout << string1 << " " << string2 << " " << string3 <<endl;
+
 
         arbol->SetSalario(id,salario,horas);
     }
 
     lectorHorasTrabajadas.close();
     
-    //escribir el archivo de salida
-    std::ofstream escritor("Cuentas.csv", std::ofstream::out); 
+    //escribir el archivo de salida 
+    std::ofstream escritor1("Cuentas.csv", std::ofstream::out); 
 
-    escritor << *(arbol);
-    escritor << arbol->GetNeto() <<", "<<arbol->GetRetencion()<<", "<< arbol->GetBruto() << endl;
-    //cout << bruto-(neto + retencion) << endl;
+    escritor1 << *(arbol);
+    escritor1 << arbol->GetNeto() <<", "<<arbol->GetRetencion()<<", "<< arbol->GetBruto() << endl;
 
-    escritor.close();
+    escritor1.close();
     
     //cout << *arbol;
 

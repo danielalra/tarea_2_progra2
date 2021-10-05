@@ -37,7 +37,7 @@ namespace {
         EXPECT_EQ("Daniel Alvarez", nombre);
     }
     
-    //no deberia aparecer el nombre ya que el SetNombreSupervisor se ejecuta en el arbol
+    //no deberia aparecer el nombre del supervisor ya que el SetNombreSupervisor se ejecuta en el arbol
     TEST(NodoTests, Test_Agregar_Hijo) {
         Nodo *nodo = new Nodo(1, "Daniel", "Alvarez", 1, 0);
         Nodo * nodoHijo = new Nodo(2, "Juan", "Perez", 1, 1);
