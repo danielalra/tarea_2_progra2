@@ -15,7 +15,8 @@ public:
     virtual int Getid()=0;
     virtual string GetNombreCompleto()=0;
     virtual string GetNombreSupervisor()=0;
-    virtual float GetSalario()=0;
+    virtual float GetNeto()=0;
+    virtual float GetBruto()=0;
 
 };
 #endif

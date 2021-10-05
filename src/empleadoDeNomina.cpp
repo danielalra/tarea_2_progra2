@@ -11,7 +11,7 @@ EmpleadoDeNomina::EmpleadoDeNomina(int id, string nombre, string apellido, int i
 }
 
 void EmpleadoDeNomina::SetSalario(int salario, int horas){
-    this->salario = salario;
+    this->salario = salario*0.93;
 }
 void EmpleadoDeNomina::SetNombreSupervisor(string nombreSupervisor){
     this->nombreSupervisor=nombreSupervisor;
@@ -27,6 +27,9 @@ string EmpleadoDeNomina::GetNombreCompleto(){
 string EmpleadoDeNomina::GetNombreSupervisor(){
     return this->nombreSupervisor;
 }
-float EmpleadoDeNomina::GetSalario(){
+float EmpleadoDeNomina::GetNeto(){
     return this->salario;
+}
+float EmpleadoDeNomina::GetBruto(){
+    return this->salario/0.93;
 }

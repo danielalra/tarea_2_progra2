@@ -12,9 +12,11 @@ namespace {
         streamSalida << *arbol;
         string actual = streamSalida.str();
 
+        string esperado = "1, Daniel Alvarez, , 0\n";
+
         delete arbol;
 
-        EXPECT_EQ("1, Daniel Alvarez, , 0\n", actual);
+        EXPECT_EQ(esperado, actual);
     }
 
     TEST(ArbolTests, Test_Agregar_Nodo) {
@@ -116,7 +118,7 @@ namespace {
         streamSalida << *arbol;
         string actual = streamSalida.str();
 
-        string esperada = "1, Daniel Alvarez, , 200\n";
+        string esperada = "1, Daniel Alvarez, , 186\n";
 
         delete arbol;
 

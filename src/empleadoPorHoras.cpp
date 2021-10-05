@@ -27,6 +27,9 @@ string EmpleadoPorHoras::GetNombreCompleto(){
 string EmpleadoPorHoras::GetNombreSupervisor(){
     return this->nombreSupervisor;
 }
-float EmpleadoPorHoras::GetSalario(){
+float EmpleadoPorHoras::GetNeto(){
+    return this->salario;
+}
+float EmpleadoPorHoras::GetBruto(){
     return this->salario;
 }

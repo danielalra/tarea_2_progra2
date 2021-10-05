@@ -3,6 +3,7 @@
 #include "nodo.h"
 #include <sstream>
 #include <iostream>
+using namespace std;
 
 Arbol::Arbol() {
     this->raiz=nullptr;
@@ -13,6 +14,8 @@ Arbol::~Arbol() {
     if(raiz!=nullptr){
         delete this->raiz;
     }
+    this->bruto=0;
+    this->neto=0;
 }
 
 
@@ -39,12 +42,25 @@ void Arbol::AgregarNodo(int id, string nombre, string apellido, int tipoEmpleado
 }
 void Arbol::SetSalario(int id, float salario, int horas){
     Nodo *nodo = this->elementos.at(id);
+
     nodo->SetSalarioNodo(salario, horas);
+    this->bruto+=nodo->GetBrutoNodo();
+    this->neto+=nodo->GetNetoNodo();
 }
+float Arbol::GetBruto(){
+    return this->bruto;
+}
+float Arbol::GetNeto(){
+    return this->neto;
+}
+float Arbol::GetRetencion(){
+    return ((this->bruto)-(this->neto));
+}
+
+
 ostream& operator << (ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz;
-    o << *(raiz);
-
+    o << *(raiz);  
     return o;
 }
 istream& operator >> (istream &lector, Arbol &arbol)

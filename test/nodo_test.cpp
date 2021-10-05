@@ -56,9 +56,7 @@ namespace {
 
         EXPECT_EQ(esperada, actual);
     }
-
-    
-    TEST(NodoTest, Test_SetSalarioDeNomina){
+      TEST(NodoTest, Test_SetSalarioDeNomina){
        Nodo *nodo = new Nodo(1, "Daniel", "Alvarez", 1, 0);
         nodo->SetSalarioNodo(200,4); 
 
@@ -66,7 +64,7 @@ namespace {
         streamSalida << *nodo;
         string actual = streamSalida.str();
 
-        string esperada = "1, Daniel Alvarez, , 200\n";
+        string esperada = "1, Daniel Alvarez, , 186\n";
 
         delete nodo;
 
@@ -81,10 +79,52 @@ namespace {
         streamSalida << *nodo;
         string actual = streamSalida.str();
 
+      
+
         string esperada = "1, Daniel Alvarez, , 800\n";
 
         delete nodo;
 
         EXPECT_EQ(esperada, actual);
     }
+
+    TEST(NodoTest, GetNetoNodo_DeNomina_test){
+        Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",1,0);
+        nodo->SetSalarioNodo(200,4);
+
+        float salario = nodo->GetNetoNodo();
+
+        float esperado = 200*0.93;
+
+        EXPECT_FLOAT_EQ(esperado, salario);
+    }
+     TEST(NodoTest, GetNetoNodo_PorHoras_test){
+        Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",2,0);
+        nodo->SetSalarioNodo(200,4);
+
+        float salario = nodo->GetNetoNodo();
+
+        float esperado = 200*4;
+
+        EXPECT_FLOAT_EQ(esperado, salario);
+    }
+    TEST(NodoTest, GetBrutoNodo_DeNomina_test){
+        Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",1,0);
+        nodo->SetSalarioNodo(200,4);
+
+        float salario = nodo->GetBrutoNodo();
+
+        EXPECT_FLOAT_EQ(200, salario);
+    }
+     TEST(NodoTest, GetBrutoNodo_PorHoras_test){
+        Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",2,0);
+        nodo->SetSalarioNodo(200,4);
+
+        float salario = nodo->GetBrutoNodo();
+
+        float esperado = 200*4;
+
+        EXPECT_FLOAT_EQ(esperado, salario);
+    }
+
 }

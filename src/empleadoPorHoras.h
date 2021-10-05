@@ -27,7 +27,9 @@ class EmpleadoPorHoras : public Empleado{
     virtual int Getid();
     virtual string GetNombreCompleto();
     virtual string GetNombreSupervisor();
-    virtual float GetSalario();
+    virtual float GetBruto();
+    virtual float GetNeto();
+    
 
 
 };

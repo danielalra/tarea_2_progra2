@@ -26,7 +26,8 @@ class EmpleadoDeNomina : public Empleado{
     virtual int Getid();
     virtual string GetNombreCompleto();
     virtual string GetNombreSupervisor();
-    virtual float GetSalario();
+    virtual float GetNeto();
+    virtual float GetBruto();
 
 
 };

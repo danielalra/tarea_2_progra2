@@ -36,6 +36,12 @@ string Nodo::GetNombreNodo(){
 void Nodo::SetSalarioNodo(int salario, int horas){
     this->empleado->SetSalario(salario, horas);
 }
+float Nodo::GetBrutoNodo(){
+    return this->empleado->GetBruto();
+}
+float Nodo::GetNetoNodo(){
+    return this->empleado->GetNeto();
+}
 
 std::ostream& operator << (std::ostream &o, const Nodo &nodo)
 {
@@ -46,7 +52,7 @@ std::ostream& operator << (std::ostream &o, const Nodo &nodo)
     o << ", ";
     o << nodo.empleado->GetNombreSupervisor();
     o << ", ";
-    o << nodo.empleado->GetSalario();
+    o << nodo.empleado->GetNeto();
     o << endl;
 
     // Imprimir información de cada hijo
