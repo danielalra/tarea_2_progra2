@@ -33,7 +33,6 @@ int main(){
     lectorPersonas.close();
 
 
-
     //  leer Nomina.txt y asignar salarios
     std::ifstream lectorNomina("Nomina.txt", std::ifstream::in);
     if (!lectorNomina.is_open())
@@ -65,7 +64,7 @@ int main(){
 
     lectorNomina.close();
 
-
+    
 
     //leer HorasTrabajadas.txt y asignar pagos
     std::ifstream lectorHorasTrabajadas("HorasTrabajadas.txt", std::ifstream::in);
@@ -92,7 +91,7 @@ int main(){
     }
 
     lectorHorasTrabajadas.close();
-
+    /*
     //escribir el archivo de salida
     std::ofstream escritor("Cuentas.csv", std::ofstream::out); 
 
@@ -101,8 +100,8 @@ int main(){
     //cout << bruto-(neto + retencion) << endl;
 
     escritor.close();
-    
-    //cout << *arbol;
+    */
+    cout << *arbol;
 
     delete arbol;
 
