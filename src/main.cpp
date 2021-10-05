@@ -8,7 +8,7 @@
 int main(){
 
     //variables a utilizar
-    string linea {""};
+    string linea {" "};
 
     int id {0};
     int salario {0};
@@ -98,11 +98,11 @@ int main(){
 
     escritor << *(arbol);
     escritor << neto <<", "<<retencion<<", "<< bruto << endl;
-    escritor << bruto-(neto + retencion) << endl;
+    //cout << bruto-(neto + retencion) << endl;
 
     escritor.close();
     
-    cout << *arbol;
+    //cout << *arbol;
 
     delete arbol;
 
