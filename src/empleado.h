@@ -6,8 +6,10 @@ using namespace std;
 
 class Empleado {
 
-public:
+    protected:
     Empleado(){};
+
+public:
     virtual ~Empleado() {};
     virtual void CalcularSalario(float,int)=0;
     virtual void SetNombreSupervisor(string)=0;
