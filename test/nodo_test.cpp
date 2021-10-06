@@ -56,9 +56,9 @@ namespace {
 
         EXPECT_EQ(esperada, actual);
     }
-      TEST(NodoTest, Test_SetSalarioDeNomina){
+      TEST(NodoTest, Test_CalcularSalarioDeNomina){
        Nodo *nodo = new Nodo(1, "Daniel", "Alvarez", 1, 0);
-        nodo->SetSalarioNodo(200,4); 
+        nodo->CalcularSalarioNodo(200,4); 
 
         ostringstream streamSalida {};
         streamSalida << *nodo;
@@ -71,9 +71,9 @@ namespace {
         EXPECT_EQ(esperada, actual);
     }
 
-    TEST(ArbolTest, Test_SetSalarioPorHoras){
+    TEST(ArbolTest, Test_CalcularSalarioPorHoras){
         Nodo *nodo = new Nodo(1, "Daniel", "Alvarez", 2, 0);
-        nodo->SetSalarioNodo(200,4); 
+        nodo->CalcularSalarioNodo(200,4); 
 
         ostringstream streamSalida {};
         streamSalida << *nodo;
@@ -90,7 +90,7 @@ namespace {
 
     TEST(NodoTest, GetNetoNodo_DeNomina_test){
         Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",1,0);
-        nodo->SetSalarioNodo(200,4);
+        nodo->CalcularSalarioNodo(200,4);
 
         float salario = nodo->GetNetoNodo();
 
@@ -100,7 +100,7 @@ namespace {
     }
      TEST(NodoTest, GetNetoNodo_PorHoras_test){
         Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",2,0);
-        nodo->SetSalarioNodo(200,4);
+        nodo->CalcularSalarioNodo(200,4);
 
         float salario = nodo->GetNetoNodo();
 
@@ -110,7 +110,7 @@ namespace {
     }
     TEST(NodoTest, GetBrutoNodo_DeNomina_test){
         Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",1,0);
-        nodo->SetSalarioNodo(200,4);
+        nodo->CalcularSalarioNodo(200,4);
 
         float salario = nodo->GetBrutoNodo();
 
@@ -118,7 +118,7 @@ namespace {
     }
      TEST(NodoTest, GetBrutoNodo_PorHoras_test){
         Nodo *nodo = new Nodo(4,"Daniel", "Alvarez",2,0);
-        nodo->SetSalarioNodo(200,4);
+        nodo->CalcularSalarioNodo(200,4);
 
         float salario = nodo->GetBrutoNodo();
 

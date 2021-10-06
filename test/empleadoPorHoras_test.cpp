@@ -5,17 +5,17 @@ using namespace std;
 
 namespace{
 
-    TEST(EmpleadoPorHorasTest, SetSalario_GetNeto_test){
+    TEST(EmpleadoPorHorasTest, CalcularSalario_GetNeto_test){
         EmpleadoPorHoras *empleado1 = new EmpleadoPorHoras(4,"Daniel", "Alvarez",3);
-        empleado1->SetSalario(200,4);
+        empleado1->CalcularSalario(200,4);
 
         float salario = empleado1->GetNeto();
 
         EXPECT_FLOAT_EQ(800, salario);
     }
-    TEST(EmpleadoPorHorasTest, SetSalario_GetBruto_test){
+    TEST(EmpleadoPorHorasTest, CalcularSalario_GetBruto_test){
         EmpleadoPorHoras *empleado1 = new EmpleadoPorHoras(4,"Daniel", "Alvarez",3);
-        empleado1->SetSalario(200,4);
+        empleado1->CalcularSalario(200,4);
 
         float salario = empleado1->GetBruto();
 

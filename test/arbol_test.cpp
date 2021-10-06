@@ -109,10 +109,10 @@ namespace {
         EXPECT_EQ(esperada, actual);
     }
 
-    TEST(ArbolTest, Test_SetSalarioDeNomina){
+    TEST(ArbolTest, Test_AsignarSalarioDeNomina){
        Arbol *arbol = new Arbol();
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 3);
-        arbol->SetSalario(1, 200, 4); 
+        arbol->AsignarSalario(1, 200, 4); 
 
         ostringstream streamSalida {};
         streamSalida << *arbol;
@@ -125,10 +125,10 @@ namespace {
         EXPECT_EQ(esperada, actual);
     }
 
-    TEST(ArbolTest, Test_SetSalarioPorHoras){
+    TEST(ArbolTest, Test_AsignarSalarioPorHoras){
        Arbol *arbol = new Arbol();
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 2, 3);
-        arbol->SetSalario(1, 200, 4); 
+        arbol->AsignarSalario(1, 200, 4); 
 
         ostringstream streamSalida {};
         streamSalida << *arbol;
@@ -146,8 +146,8 @@ namespace {
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
         arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
 
-        arbol->SetSalario(1, 20000, 0);
-        arbol->SetSalario(2, 200, 4); 
+        arbol->AsignarSalario(1, 20000, 0);
+        arbol->AsignarSalario(2, 200, 4); 
 
         float actual = arbol->GetNeto();
 
@@ -162,8 +162,8 @@ namespace {
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
         arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
 
-        arbol->SetSalario(1, 20000, 0);
-        arbol->SetSalario(2, 200, 4); 
+        arbol->AsignarSalario(1, 20000, 0);
+        arbol->AsignarSalario(2, 200, 4); 
 
         float actual = arbol->GetBruto();
 
@@ -178,8 +178,8 @@ namespace {
         arbol->AgregarNodo(1, "Daniel", "Alvarez", 1, 0);
         arbol->AgregarNodo(2, "Juan", "Perez", 2, 1);
 
-        arbol->SetSalario(1, 20000, 0);
-        arbol->SetSalario(2, 200, 4); 
+        arbol->AsignarSalario(1, 20000, 0);
+        arbol->AsignarSalario(2, 200, 4); 
 
         float actual = arbol->GetRetencion();
 
