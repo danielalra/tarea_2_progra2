@@ -9,7 +9,7 @@ class Empleado {
 public:
     Empleado(){};
     virtual ~Empleado() {};
-    virtual void SetSalario(int,int)=0;
+    virtual void CalcularSalario(float,int)=0;
     virtual void SetNombreSupervisor(string)=0;
 
     virtual int Getid()=0;

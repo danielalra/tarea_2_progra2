@@ -21,7 +21,7 @@ class EmpleadoPorHoras : public Empleado{
     EmpleadoPorHoras(int, string, string, int);
     ~EmpleadoPorHoras(){}
 
-    virtual void SetSalario(int,int);
+    virtual void CalcularSalario(float,int);
     virtual void SetNombreSupervisor(string);
 
     virtual int Getid();

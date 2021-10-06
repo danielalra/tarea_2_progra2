@@ -20,7 +20,7 @@ class EmpleadoDeNomina : public Empleado{
     EmpleadoDeNomina(int, string, string, int);
     ~EmpleadoDeNomina(){}
 
-    virtual void SetSalario(int,int);
+    virtual void CalcularSalario(float,int);
     virtual void SetNombreSupervisor(string);
 
     virtual int Getid();

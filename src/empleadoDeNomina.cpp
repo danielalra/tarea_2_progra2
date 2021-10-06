@@ -10,7 +10,7 @@ EmpleadoDeNomina::EmpleadoDeNomina(int id, string nombre, string apellido, int i
     this->salario=0; 
 }
 
-void EmpleadoDeNomina::SetSalario(int salario, int horas){
+void EmpleadoDeNomina::CalcularSalario(float salario, int horas){
     this->salario = salario*0.93;
 }
 void EmpleadoDeNomina::SetNombreSupervisor(string nombreSupervisor){

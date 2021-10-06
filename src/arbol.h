@@ -15,10 +15,15 @@ class Arbol{
     public:
     Arbol();
     ~Arbol();
+
     void AgregarNodo(int, string, string, int, int);
-    void SetSalario(int, float, int);
+
+    void AsignarSalario(int, float, int);
+
     float GetBruto();
+
     float GetNeto();
+
     float GetRetencion();
 
     //leer un archivo con formato de Personas.txt

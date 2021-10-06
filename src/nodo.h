@@ -17,11 +17,17 @@ class Nodo{
     ~Nodo();
 
     void AgregarHijo(Nodo *hijo);
+
     void SetNombreSupervisorNodo(string nombreSupervisor);
+
     string GetNombreNodo();
-    void SetSalarioNodo(float, int);
+
+    void CalcularSalarioNodo(float, int);
+
     float GetBrutoNodo();
+
     float GetNetoNodo();
+
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo);
 };
 

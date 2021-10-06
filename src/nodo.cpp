@@ -23,22 +23,28 @@ Nodo::~Nodo(){
     }
 }
 
+
 void Nodo::AgregarHijo(Nodo *hijo) {
     this->hijos.push_back(hijo);
 }
+
 void Nodo::SetNombreSupervisorNodo(string nombreSupervisor){
 
     this->empleado->SetNombreSupervisor(nombreSupervisor);
 }
+
 string Nodo::GetNombreNodo(){
     return this->empleado->GetNombreCompleto();
 }
-void Nodo::SetSalarioNodo(float salario, int horas){
-    this->empleado->SetSalario(salario, horas);
+
+void Nodo::CalcularSalarioNodo(float salario, int horas){
+    this->empleado->CalcularSalario(salario, horas);
 }
+
 float Nodo::GetBrutoNodo(){
     return this->empleado->GetBruto();
 }
+
 float Nodo::GetNetoNodo(){
     return this->empleado->GetNeto();
 }

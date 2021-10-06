@@ -48,7 +48,7 @@ int main(){
         
         stream >> id >>salario;
 
-        arbol->SetSalario(id,salario,1);
+        arbol->AsignarSalario(id,salario,1);
     }
 
     lectorNomina.close();
@@ -80,7 +80,7 @@ int main(){
        // cout << string1 << " " << string2 << " " << string3 <<endl;
 
 
-        arbol->SetSalario(id,salario,horas);
+        arbol->AsignarSalario(id,salario,horas);
     }
 
     lectorHorasTrabajadas.close();

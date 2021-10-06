@@ -11,7 +11,7 @@ EmpleadoPorHoras::EmpleadoPorHoras(int id, string nombre, string apellido, int i
     this->salario=0;
 }
 
-void EmpleadoPorHoras::SetSalario(int salario, int horas){
+void EmpleadoPorHoras::CalcularSalario(float salario, int horas){
     this->salario = salario*horas;
 }
 void EmpleadoPorHoras::SetNombreSupervisor(string nombreSupervisor){
